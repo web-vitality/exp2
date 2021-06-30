@@ -1,0 +1,526 @@
+.section-limit {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+$main_color: #19191B;
+$colors: (
+	primary: #5634d1,
+	accent: #28dde0,
+	black: #2b3742,
+	white: white,
+);
+
+@function color($key) { @return map-get($colors, $key); }
+@function contrast-color($color,
+	$dark: color(black), $light: color(white)) {
+	@if (lightness($color) > 75) { @return $dark; }
+	@else { @return $light; }
+}
+
+$colors: map-merge($colors, (
+	text-dark: rgba(color(black), .75),
+	text-light: rgba(color(white), .75),
+));
+
+$html-background: color(primary);
+$nav-background: color(accent);
+$nav-width: 20rem;
+$nav-z-index: 1;
+$nav-toggle-bar-height: 0.4rem;
+$nav-toggle-bar-width: 3.6rem;
+$nav-toggle-z-index: 2;
+
+@mixin center-vertically($position: absolute) {
+	position: $position;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin transform($transform) {
+	-ms-transform: $transform;
+	-webkit-transform: $transform;
+	transform: $transform;
+}
+
+body{
+    font-family: "DM Sans", sans-serif;
+    font-weight: normal;
+    color: $main_color;
+    font-size: 17px;
+    background-color: #fff;
+}
+
+img{
+    max-width: 100%;
+}
+
+h1, h2{
+    font-weight: bold;
+    font-size: 50px;
+}
+
+
+.main-header{
+    padding-top: 30px;
+    position: relative;
+}
+
+.header-navi{
+    
+    & > ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        & > li{
+            margin-right: 49px;
+            & > a{
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 20px;
+                color: #696871;
+                text-decoration: none;
+                transition: all 0.3s;
+                &:hover{
+                    border-bottom: 1px solid #5454D4;
+                    padding-bottom: 10px;
+                    color: $main_color;
+                }
+            }
+        }
+    }
+}
+
+.nav-toggle {
+	cursor: pointer;
+	height: 5 * $nav-toggle-bar-height;
+	left: 2rem;
+	position: fixed;
+	top: 2rem;
+	width: $nav-toggle-bar-width;
+	z-index: $nav-toggle-z-index;
+	&:hover { opacity: 0.8; }
+
+	.nav-toggle-bar,
+	.nav-toggle-bar::after,
+	.nav-toggle-bar::before {
+		@include center-vertically;
+		background: #FF7143;
+		content: '';
+		height: $nav-toggle-bar-height;
+		transition: all .5s;
+		width: 100%;
+	}
+	.nav-toggle-bar { margin-top: 0; }
+	.nav-toggle-bar::after { margin-top: 2 * $nav-toggle-bar-height; }
+	.nav-toggle-bar::before { margin-top: -2 * $nav-toggle-bar-height; }
+	&.expanded .nav-toggle-bar { background: transparent; }
+	&.expanded .nav-toggle-bar::after,
+	&.expanded .nav-toggle-bar::before {
+		background: contrast-color($nav-background);
+		margin-top: 0;
+	}
+	&.expanded .nav-toggle-bar::after { @include transform(rotate(45deg)); }
+	&.expanded .nav-toggle-bar::before { @include transform(rotate(-45deg)); }
+
+    &.expanded + .mobile-header__header-navi{
+        display: block;
+    }
+}
+
+.a-button{
+    background: #FF7143;
+    border-radius: 10px;
+    padding: 19px 60px;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    transition: all 0.4s;
+    display: inline-block;
+    &_bg-blue{
+        background: #5454D4;
+    }
+    &:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.hero{
+    margin-top: 39px;
+    &__sec-content{
+        padding-bottom: 25px;
+    }
+    &__title{
+        font-weight: bold;
+        font-size: 80px;
+        line-height: 77px;
+        margin-bottom: 30px;
+    }
+    &__text{
+        font-family: 'Mulish';
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 50px;
+    }
+    &__image{
+        animation: mover 1s infinite  alternate;
+    }
+    &__arrow-down{
+        display: inline-block;
+        margin-left: 40px;
+        cursor: pointer;
+        animation: bounce 2s infinite;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+
+}
+
+.partners-logo{
+    margin: 150px 0;
+    &__img{
+        transition: all 0.3s;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+
+.content-section{
+    position: relative;
+    margin-bottom: 80px;
+    &__title{
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 57px;
+        margin-bottom: 30px;
+    }
+    &__text{
+        font-family: 'Mulish';
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+    &__link{
+        color: #5454D4;
+    }
+}
+
+.advantages{
+    padding-top: 60px;
+}
+
+.advantages-box{
+    &__title{
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+    &__desc{
+        font-family: 'Mulish';
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    &__img{
+        margin-bottom: 20px;
+        margin-right: -40px;
+    }
+}
+
+.wrapper-plan-prices{
+    margin-top: 150px;
+    margin-bottom: 98px;
+    &__title{
+        font-weight: bold;
+        font-size: 60px;
+        line-height: 70px;
+    }
+}
+
+.choose-period-plans{
+    height: 65px;
+    width: 344px;
+    border-radius: 10px;
+    background: #F7F7FB;
+    padding: 5px 6px;
+    margin-left: auto;
+    
+    &__yearly{
+        width: 49%;
+        height: 100%;
+        background: #5454D4;
+        border-radius: 10px 0px 0px 10px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 21px;
+        text-align: center;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    &__monthly{
+        width: 50%;
+        height: 100%;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 21px;
+        text-align: center;
+        color: $main_color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+
+.wrapper-card-plan{
+    margin-bottom: 160px;
+}
+
+.card-plan{
+    max-width: 330px;
+    width: 100%;
+    height: 441px;
+    background: #F8F8F8;
+    border-radius: 10px;
+    padding: 34px 21px 27px;
+    text-align: center;
+    transition: all 0.3s;
+    &__name{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        text-align: center;
+        margin-bottom: 22px;
+        color: #696871;
+    }
+    &__price{
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 56px;
+        text-align: center;
+        margin-bottom: 35px;
+        color: #1D293F;
+        &_font-small{
+            font-size: 28px;
+        }
+    }
+    &__features{
+        padding: 0;
+        margin: 0 0 36px;
+        list-style: none;
+        & > li{
+            margin-bottom: 30px;
+            color: #696871;
+        }
+    }
+    &__link{
+        background: #FFFFFF;
+        border: 1px solid #EAE9F2;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 22px;
+        text-align: center;
+        color: #5454D4;
+        height: 60px;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover{
+            color: #5454D4;
+            text-decoration: none;
+        }
+
+    }
+    &__active{
+        background: #FF7143;
+        box-shadow: 0px 32px 34px rgba(255, 112, 59, 0.317827);
+        transform: scale(1.1);
+        & .card-plan__link{
+            background: #9F3919;
+            border-color: #9F3919;
+        }
+        & .card-plan__name,
+        & .card-plan__price,
+        & .card-plan__features > li,
+        & .card-plan__link{
+            color: #fff;
+            transform: scale(0.9);
+        }
+    }
+}
+
+.mobile-header{
+    display: none;
+}
+
+.mobile-header{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    // background: #FF7143;
+    height: 95px;
+    &__header-navi{
+        display: none;
+        background: #FF7143;
+        width: 50%;
+        padding: 100px 10px 10px 31px;
+        & > ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            & > li{
+                margin-bottom: 10px;
+                & a{
+                    color: #fff;
+                    display: block;
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1140px){
+    .hero__title{
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .partners-logo{
+        margin: 80px 0;
+    }
+    .wrapper-plan-prices__title{
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .advantages{
+        margin-top: 30px;
+    }
+    .wrapper-plan-prices{
+        margin-top: 90px;
+    }
+}
+
+@media (max-width: 960px){
+    .mobile-header{
+        display: block;
+    }
+    .main-header{
+        display: none;
+    }
+    .wrapper-main{
+        margin-top: 115px;
+    }
+    .logo{
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+    .card-plan{
+        padding: 34px 11px 27px;
+        &__price{
+            font-size: 50px;
+        }
+    }
+    .wrapper-card-plan{
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px){
+    .card-plan{
+        margin: 0 auto 20px;
+        &__active{
+            transform: scale(1);
+            & .card-plan__name,
+            & .card-plan__price,
+            & .card-plan__features > li,
+            & .card-plan__link{
+                transform: scale(1);
+            }
+        }
+    }
+    .hero__title{
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .partners-logo{
+        margin: 30px 0;
+    }
+    .content-section{
+        text-align: center;
+        margin-bottom: 50px;
+        & img{
+            max-width: 50%;
+            margin: 20px 0;
+        }
+    }
+    .choose-period-plans{
+        margin: 30px auto 0;
+    }
+    .advantages{
+        margin-top: 0;
+    }
+    .partners-logo__img{
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 576px){
+    .advantages-box{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 378px){
+    .choose-period-plans{
+        width: 100%;
+    }
+    .wrapper-plan-prices__title{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .content-section__title{
+        font-size: 30px;
+        line-height: 37px;
+    }
+}

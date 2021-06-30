@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CYE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Mulish&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <script>
+        function scrollToSmoothly(pos, time) {
+            var currentPos = window.pageYOffset;
+            var start = null;
+            if(time == null) time = 500;
+            pos = +pos, time = +time;
+            window.requestAnimationFrame(function step(currentTime) {
+                start = !start ? currentTime : start;
+                var progress = currentTime - start;
+                if (currentPos < pos) {
+                    window.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos);
+                } else {
+                    window.scrollTo(0, currentPos - ((currentPos - pos) * progress / time));
+                }
+                if (progress < time) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    window.scrollTo(0, pos);
+                }
+            });
+        }
+    </script>
+	
+    <div class="wrapper-main">
+        <div class="container-xl">
+           <header class="main-header">
+               <div class="row justify-content-between align-items-center">
+                   <div class="col-auto">
+                        <div class="logo"><a href="."><img src="img/logo.svg" alt="logo"></a></div>
+                   </div>
+                   <div class="col-auto">
+                        <nav id="nav" class="header-navi">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Features</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </nav>
+                       
+                   </div>
+                   <div class="col-auto">
+                        <a href="#" class="a-button">Get Started</a>
+                   </div>
+               </div>
+           </header> 
+
+           <div class="mobile-header">
+                <div class="nav-toggle">
+                    <div class="nav-toggle-bar"></div>
+                </div>
+                <nav class="mobile-header__header-navi">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </nav>
+                <div class="logo"><a href="."><img src="img/logo.svg" alt="logo"></a></div>
+           </div>
+
+          
+
+           <section class="container-fluid hero">
+                <div class="row align-items-end">
+                    <div class="col-12 col-md-6">
+                        <div class="hero__sec-content">
+                            <div class="hero__title">Grow your subscription business</div>
+                            <div class="hero__text">Outcome-centered products that reduce churn,<br> optimize pricing, and grow your subscription<br> business end-to-end.</div>
+                            <a href="#" class="a-button a-button_bg-blue">Get Started</a>
+                            <div class="hero__arrow-down" onClick="scrollToSmoothly(800, 1000)"><img src="img/down-arrow.png" alt="down-arrow"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="hero__image">
+                            <img src="img/hero_1.png" alt="hero 1">
+                        </div>
+                    </div>
+                </div>            
+           </section>
+
+           <section class="container-fluid partners-logo">
+              <div class="row justify-content-between align-items-center">
+                <div class="col-6 col-md-auto" data-aos="fade-right" data-aos-delay="100">
+                    <img class="partners-logo__img" src="img/group.jpg" alt="group">
+                </div>
+                <div class="col-6 col-md-auto" data-aos="fade-right" data-aos-delay="200">
+                    <img class="partners-logo__img" src="img/group2.jpg" alt="group2">
+                </div>
+                <div class="col-6 col-md-auto" data-aos="fade-right" data-aos-delay="300">
+                    <img class="partners-logo__img" src="img/group3.jpg" alt="group3">
+                </div>
+                <div class="col-6 col-md-auto" data-aos="fade-right" data-aos-delay="400">
+                    <img class="partners-logo__img" src="img/group4.jpg" alt="group4">
+                </div>
+                <div class="col-6 col-md-auto" data-aos="fade-right" data-aos-delay="500">
+                    <img class="partners-logo__img" src="img/group5.jpg" alt="group5">
+                </div>
+              </div>
+           </section>
+
+           <section class="container-fluid content-section">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="content-section__image">
+                            <img src="img/hero_2.png" alt="hero 2">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="content-section__sec-content">
+                            <div class="content-section__title">Subscription index</div>
+                            <div class="content-section__text">A daily dataset to keep you up to date on<br> subscription market trends and what's happening in<br> your vertical.</div>
+                            <a href="#" class="content-section__link">Learn more</a>
+                        </div>
+                    </div>
+                </div>            
+            </section>
+
+            <section class="container-fluid content-section">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="content-section__sec-content">
+                            <div class="content-section__title">In-depth metrics</div>
+                            <div class="content-section__text">Accurate, real-time reporting at your fingertips.<br> Getting data has never been easier.</div>
+                            <a href="#" class="content-section__link">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="content-section__image">
+                            <img src="img/hero_3.png" alt="hero 3">
+                        </div>
+                    </div>
+                </div>            
+            </section>
+
+            <section class="container-fluid advantages">
+                <div class="row text-center align-items-center">
+                    <div class="col-12 col-sm-4" data-aos="flip-left">
+                        <div class="advantages-box">
+                            <img class="advantages-box__img" src="img/card.png" alt="card">
+                            <div class="advantages-box__title">Benchmarks</div>
+                            <div class="advantages-box__desc">See how you stack up against comparable companies in similar stages.</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4" data-aos="flip-left">
+                        <div class="advantages-box">
+                            <img class="advantages-box__img" src="img/calculator.png" alt="calculator">
+                            <div class="advantages-box__title">Pricing Audit</div>
+                            <div class="advantages-box__desc">Benchmark the health of your monetization and pricing strategy.</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4" data-aos="flip-left">
+                        <div class="advantages-box">
+                             <img class="advantages-box__img" src="img/camera.png" alt="camera">
+                             <div class="advantages-box__title">Retention Audit</div>
+                            <div class="advantages-box__desc">Audit where revenue leakage exists and where you can increase retention.</div>
+                        </div>
+                    </div>
+                    
+                  </div>
+            </section>
+
+            <section class="container-fluid wrapper-plan-prices">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="wrapper-plan-prices__title">Get the right plan for future product.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row justify-content-between choose-period-plans">
+                            <div class="col-auto choose-period-plans__yearly">Yearly</div>
+                            <div class="col-auto choose-period-plans__monthly">Monthly</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           <section class="container-fluid wrapper-card-plan">
+                <div class="row row-cols-1 row-cols-md-3 justify-content-center align-items-center">
+                    <div class="col">
+                        <div class="card-plan">
+                            <div class="card-plan__name">Starter</div>
+                            <div class="card-plan__price">Free</div>
+                            <ul class="card-plan__features">
+                                <li>1 Website</li>
+                                <li>5 GB Hosting</li>
+                                <li>Limited Support</li>
+                            </ul>
+                            <a class="card-plan__link">Get Started</a>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card-plan card-plan__active">
+                            <div class="card-plan__name">Premium</div>
+                            <div class="card-plan__price">$29<span class="card-plan__price_font-small">/month</span></div>
+                            <ul class="card-plan__features">
+                                <li>10 Website</li>
+                                <li>15 GB Hosting</li>
+                                <li>Premium Support</li>
+                            </ul>
+                            <a class="card-plan__link">Get Started</a>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card-plan">
+                            <div class="card-plan__name">Enterprise</div>
+                            <div class="card-plan__price">$49<span class="card-plan__price_font-small">/month</span></div>
+                            <ul class="card-plan__features">
+                                <li>Unlimited Website</li>
+                                <li>50 GB Hosting</li>
+                                <li>Premium Support</li>
+                            </ul>
+                            <a class="card-plan__link">Get Started</a>
+                        </div>
+                    </div>
+                    
+                </div>
+           </section>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+
+    <script>
+        AOS.init({
+            mirror: false
+        });
+      </script>
+
+</body>
+</html>

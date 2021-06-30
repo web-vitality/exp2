@@ -1,0 +1,473 @@
+.section-limit {
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px; }
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-weight: normal;
+  color: #19191B;
+  font-size: 17px;
+  background-color: #fff; }
+
+img {
+  max-width: 100%; }
+
+h1, h2 {
+  font-weight: bold;
+  font-size: 50px; }
+
+.main-header {
+  padding-top: 30px;
+  position: relative; }
+
+.header-navi > ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .header-navi > ul > li {
+    margin-right: 49px; }
+    .header-navi > ul > li > a {
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 20px;
+      color: #696871;
+      text-decoration: none;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+      .header-navi > ul > li > a:hover {
+        border-bottom: 1px solid #5454D4;
+        padding-bottom: 10px;
+        color: #19191B; }
+
+.nav-toggle {
+  cursor: pointer;
+  height: 2rem;
+  left: 2rem;
+  position: fixed;
+  top: 2rem;
+  width: 3.6rem;
+  z-index: 2; }
+  .nav-toggle:hover {
+    opacity: 0.8; }
+  .nav-toggle .nav-toggle-bar,
+  .nav-toggle .nav-toggle-bar::after,
+  .nav-toggle .nav-toggle-bar::before {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: #FF7143;
+    content: '';
+    height: 0.4rem;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    width: 100%; }
+  .nav-toggle .nav-toggle-bar {
+    margin-top: 0; }
+  .nav-toggle .nav-toggle-bar::after {
+    margin-top: 0.8rem; }
+  .nav-toggle .nav-toggle-bar::before {
+    margin-top: -0.8rem; }
+  .nav-toggle.expanded .nav-toggle-bar {
+    background: transparent; }
+  .nav-toggle.expanded .nav-toggle-bar::after,
+  .nav-toggle.expanded .nav-toggle-bar::before {
+    background: white;
+    margin-top: 0; }
+  .nav-toggle.expanded .nav-toggle-bar::after {
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .nav-toggle.expanded .nav-toggle-bar::before {
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .nav-toggle.expanded + .mobile-header__header-navi {
+    display: block; }
+
+.a-button {
+  background: #FF7143;
+  border-radius: 10px;
+  padding: 19px 60px;
+  color: #fff;
+  font-size: 17px;
+  text-align: center;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  display: inline-block; }
+  .a-button_bg-blue {
+    background: #5454D4; }
+  .a-button:hover {
+    color: #fff;
+    text-decoration: none; }
+
+.hero {
+  margin-top: 39px; }
+  .hero__sec-content {
+    padding-bottom: 25px; }
+  .hero__title {
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 77px;
+    margin-bottom: 30px; }
+  .hero__text {
+    font-family: 'Mulish';
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 50px; }
+  .hero__image {
+    -webkit-animation: mover 1s infinite  alternate;
+            animation: mover 1s infinite  alternate; }
+  .hero__arrow-down {
+    display: inline-block;
+    margin-left: 40px;
+    cursor: pointer;
+    -webkit-animation: bounce 2s infinite;
+            animation: bounce 2s infinite; }
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px); }
+  60% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px); } }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px); }
+  60% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px); } }
+
+@-webkit-keyframes mover {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px); } }
+
+@keyframes mover {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px); } }
+
+.partners-logo {
+  margin: 150px 0; }
+  .partners-logo__img {
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+    .partners-logo__img:hover {
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1); }
+
+.content-section {
+  position: relative;
+  margin-bottom: 80px; }
+  .content-section__title {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 57px;
+    margin-bottom: 30px; }
+  .content-section__text {
+    font-family: 'Mulish';
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 30px; }
+  .content-section__link {
+    color: #5454D4; }
+
+.advantages {
+  padding-top: 60px; }
+
+.advantages-box__title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 20px; }
+
+.advantages-box__desc {
+  font-family: 'Mulish';
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px; }
+
+.advantages-box__img {
+  margin-bottom: 20px;
+  margin-right: -40px; }
+
+.wrapper-plan-prices {
+  margin-top: 150px;
+  margin-bottom: 98px; }
+  .wrapper-plan-prices__title {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 70px; }
+
+.choose-period-plans {
+  height: 65px;
+  width: 344px;
+  border-radius: 10px;
+  background: #F7F7FB;
+  padding: 5px 6px;
+  margin-left: auto; }
+  .choose-period-plans__yearly {
+    width: 49%;
+    height: 100%;
+    background: #5454D4;
+    border-radius: 10px 0px 0px 10px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer; }
+  .choose-period-plans__monthly {
+    width: 50%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #19191B;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer; }
+
+.wrapper-card-plan {
+  margin-bottom: 160px; }
+
+.card-plan {
+  max-width: 330px;
+  width: 100%;
+  height: 441px;
+  background: #F8F8F8;
+  border-radius: 10px;
+  padding: 34px 21px 27px;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .card-plan__name {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 22px;
+    color: #696871; }
+  .card-plan__price {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 56px;
+    text-align: center;
+    margin-bottom: 35px;
+    color: #1D293F; }
+    .card-plan__price_font-small {
+      font-size: 28px; }
+  .card-plan__features {
+    padding: 0;
+    margin: 0 0 36px;
+    list-style: none; }
+    .card-plan__features > li {
+      margin-bottom: 30px;
+      color: #696871; }
+  .card-plan__link {
+    background: #FFFFFF;
+    border: 1px solid #EAE9F2;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: center;
+    color: #5454D4;
+    height: 60px;
+    width: 100%;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .card-plan__link:hover {
+      color: #5454D4;
+      text-decoration: none; }
+  .card-plan__active {
+    background: #FF7143;
+    -webkit-box-shadow: 0px 32px 34px rgba(255, 112, 59, 0.317827);
+            box-shadow: 0px 32px 34px rgba(255, 112, 59, 0.317827);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1); }
+    .card-plan__active .card-plan__link {
+      background: #9F3919;
+      border-color: #9F3919; }
+    .card-plan__active .card-plan__name,
+    .card-plan__active .card-plan__price,
+    .card-plan__active .card-plan__features > li,
+    .card-plan__active .card-plan__link {
+      color: #fff;
+      -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+              transform: scale(0.9); }
+
+.mobile-header {
+  display: none; }
+
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  height: 95px; }
+  .mobile-header__header-navi {
+    display: none;
+    background: #FF7143;
+    width: 50%;
+    padding: 100px 10px 10px 31px; }
+    .mobile-header__header-navi > ul {
+      padding: 0;
+      margin: 0;
+      list-style: none; }
+      .mobile-header__header-navi > ul > li {
+        margin-bottom: 10px; }
+        .mobile-header__header-navi > ul > li a {
+          color: #fff;
+          display: block;
+          padding: 5px 0; }
+
+@media (max-width: 1140px) {
+  .hero__title {
+    font-size: 60px;
+    line-height: 60px; }
+  .partners-logo {
+    margin: 80px 0; }
+  .wrapper-plan-prices__title {
+    font-size: 40px;
+    line-height: 40px; }
+  .advantages {
+    margin-top: 30px; }
+  .wrapper-plan-prices {
+    margin-top: 90px; } }
+
+@media (max-width: 960px) {
+  .mobile-header {
+    display: block; }
+  .main-header {
+    display: none; }
+  .wrapper-main {
+    margin-top: 115px; }
+  .logo {
+    position: absolute;
+    top: 25px;
+    right: 20px; }
+  .card-plan {
+    padding: 34px 11px 27px; }
+    .card-plan__price {
+      font-size: 50px; }
+  .wrapper-card-plan {
+    margin-bottom: 50px; } }
+
+@media (max-width: 768px) {
+  .card-plan {
+    margin: 0 auto 20px; }
+    .card-plan__active {
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1); }
+      .card-plan__active .card-plan__name,
+      .card-plan__active .card-plan__price,
+      .card-plan__active .card-plan__features > li,
+      .card-plan__active .card-plan__link {
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1); }
+  .hero__title {
+    font-size: 40px;
+    line-height: 40px; }
+  .partners-logo {
+    margin: 30px 0; }
+  .content-section {
+    text-align: center;
+    margin-bottom: 50px; }
+    .content-section img {
+      max-width: 50%;
+      margin: 20px 0; }
+  .choose-period-plans {
+    margin: 30px auto 0; }
+  .advantages {
+    margin-top: 0; }
+  .partners-logo__img {
+    margin: 20px 0; } }
+
+@media (max-width: 576px) {
+  .advantages-box {
+    margin-bottom: 20px; } }
+
+@media (max-width: 378px) {
+  .choose-period-plans {
+    width: 100%; }
+  .wrapper-plan-prices__title {
+    font-size: 30px;
+    line-height: 30px; }
+  .content-section__title {
+    font-size: 30px;
+    line-height: 37px; } }
